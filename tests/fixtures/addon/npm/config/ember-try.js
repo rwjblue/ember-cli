@@ -56,29 +56,22 @@ module.exports = async function() {
         }
       },
       {
-        name: 'ember-default-with-jquery',
-        env: {
-          EMBER_OPTIONAL_FEATURES: JSON.stringify({
-            'jquery-integration': true
-          })
-        },
-        npm: {
-          devDependencies: {
-            '@ember/jquery': '^0.5.1'
-          }
-        }
-      },
-      {
         name: 'ember-classic',
+        ember: {
+          edition: 'classic'
+        },
         env: {
           EMBER_OPTIONAL_FEATURES: JSON.stringify({
             'application-template-wrapper': true,
             'default-async-observers': false,
+            'jquery-integration': true,
             'template-only-glimmer-components': false
           })
         }
-        ember: {
-          edition: 'classic'
+        npm: {
+          devDependencies: {
+            '@ember/jquery': '^0.5.1'
+          }
         }
       }
     ]
